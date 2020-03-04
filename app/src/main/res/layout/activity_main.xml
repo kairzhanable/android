@@ -21,14 +21,14 @@
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="fdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+        android:text="@string/questionText"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
@@ -50,18 +50,19 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/buttonPrevious"
+            android:id="@+id/btnPrev"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Previous" />
+            android:enabled="false"
+            android:text="@string/btnPrev" />
 
         <Button
-            android:id="@+id/buttonNext"
+            android:id="@+id/btnNext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Next" />
+            android:text="@string/btnNext" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,39 +71,41 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <Button
-            android:id="@+id/button2"
+        <ToggleButton
+            android:id="@+id/toggleButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:text="Button" />
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textOff="@string/btnAns1"
+            android:textOn="@string/btnAns1" />
 
-        <Button
-            android:id="@+id/button3"
+        <ToggleButton
+            android:id="@+id/toggleButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="0dp"
-            android:text="Button" />
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textOff="@string/btnAns2"
+            android:textOn="@string/btnAns2" />
 
-        <Button
-            android:id="@+id/button"
+        <ToggleButton
+            android:id="@+id/toggleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="0dp"
-            android:text="Button" />
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textOff="@string/btnAns3"
+            android:textOn="@string/btnAns3" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

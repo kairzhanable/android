@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="questionText">Ты сдашь экзамен по Орлову?</string>
+    <string name="btnAns1">Ответ 1</string>
+    <string name="btnAns2">Ответ 2</string>
+    <string name="btnAns3">Ответ 3</string>
+    <string name="btnNext">Дальше</string>
+    <string name="btnPrev">Назад</string>
 </resources>
