@@ -151,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 4:
                     // TODO вывести статистику
+
+                    //finish();
                     break;
             }
         }
