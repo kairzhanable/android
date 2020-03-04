@@ -40,7 +40,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <ToggleButton
-            android:id="@+id/toggleButton3"
+            android:id="@+id/btnAns1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -88,20 +88,20 @@
             android:textOn="@string/btnAns1" />
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/btnAns2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:text="ToggleButton"
             android:textOff="@string/btnAns2"
             android:textOn="@string/btnAns2" />
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/btnAns3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:text="ToggleButton"
             android:textOff="@string/btnAns3"
