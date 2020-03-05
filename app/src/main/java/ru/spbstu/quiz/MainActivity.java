@@ -2,6 +2,7 @@ package ru.spbstu.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -151,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 4:
                     // TODO вывести статистику
-
-                    //finish();
+                    Intent intent = new Intent(MainActivity.this, Statistics.class);
+                    startActivity(intent);
+                    finish();
                     break;
             }
         }
