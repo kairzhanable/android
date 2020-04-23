@@ -6,11 +6,21 @@ public class Test {
     Question quest3;
     Question currentQuest;
 
-    public Test (Question aQuest1, Question aQuest2, Question aQuest3){
-        quest1 = aQuest1;
-        quest2 = aQuest2;
-        quest3 = aQuest3;
+    public static Test INSTANCE ;
+
+    public void reset(){
         currentQuest = quest1;
+        quest1.chosenAns = null;
+        quest2.chosenAns = null;
+        quest3.chosenAns = null;
+    }
+
+    public Test (Question aQuest1, Question aQuest2, Question aQuest3){
+            quest1 = aQuest1;
+            quest2 = aQuest2;
+            quest3 = aQuest3;
+            currentQuest = quest1;
+            INSTANCE = this;
     }
 
     public int nextQuest () {

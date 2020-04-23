@@ -41,22 +41,27 @@ public class MainActivity extends AppCompatActivity {
         btnPrev.setOnClickListener(oclPrev);
         btnPrev.setEnabled(false);
 
-        Question quest1 = new Question("Вы сдадите экзамен у Орлова С.Г.?",
+        if(Test.INSTANCE == null){
+            Question quest1 = new Question("Вы сдадите экзамен у Орлова С.Г.?",
                 new Answer("Нет"),
                 new Answer("Конечно же нет"),
                 new Answer("Куда уж мне..."));
 
-        Question quest2 = new Question("Аска или Рей?",
+            Question quest2 = new Question("Аска или Рей?",
                 new Answer("Аска"),
                 new Answer("Рей"),
                 new Answer("Кто?"));
 
-        Question quest3 = new Question("Рита выпустит БКРР в этом году?",
+            Question quest3 = new Question("Рита выпустит БКРР в этом году?",
                 new Answer("Нет конечно!"),
                 new Answer("Это же Рита"),
                 new Answer("Мне хватает Бесконечного Лета"));
 
-        myTest = new Test(quest1, quest2, quest3);
+            myTest = new Test(quest1, quest2, quest3);
+        } else {
+            myTest = Test.INSTANCE;
+            myTest.reset();
+        }
         questText = findViewById(R.id.question);
         refreshTexts ();
     }
@@ -88,25 +93,6 @@ public class MainActivity extends AppCompatActivity {
         btnAns2.setText(myTest.currentQuest.ans2.answer);
         btnAns3.setText(myTest.currentQuest.ans3.answer);
     }
-
-    /*
-    private void disableAnsButtons(int btnNum) {
-        switch (btnNum) {
-            case 1:
-                btnAns2.setChecked(false);
-                btnAns3.setChecked(false);
-                break;
-            case 2:
-                btnAns1.setChecked(false);
-                btnAns3.setChecked(false);
-                break;
-            case 3:
-                btnAns1.setChecked(false);
-                btnAns2.setChecked(false);
-                break;
-        }
-    }
-    */
 
     OnClickListener oclAns1 = new OnClickListener() {
         @Override
@@ -152,9 +138,15 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 4:
                     // TODO вывести статистику
-                    Intent intent = new Intent(MainActivity.this, Statistics.class);
+                    if(myTest.quest3.chosenAns != null)
+                        myTest.quest3.chosenAns.counter++; // сохраняем данные
+                    if(myTest.quest2.chosenAns != null)
+                        myTest.quest2.chosenAns.counter++;
+                    if(myTest.quest1.chosenAns != null)
+                        myTest.quest1.chosenAns.counter++;
+                    Intent intent = new Intent(MainActivity.this, Statistics.class); // запиливаем новое активити
                     startActivity(intent);
-                    finish();
+                    finish();// убиваем старое активити
                     break;
             }
         }
